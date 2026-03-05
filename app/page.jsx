@@ -30,8 +30,8 @@ const STATUS_STYLES = {
   denied:   { color: "#fca5a5", bg: "rgba(252,165,165,0.1)", label: "Denied" },
 };
 
-function getDaysArray(start: string, end: string) {
-  const days: string[] = [];
+function getDaysArray(start, end) {
+  const days = [];
   const cur = new Date(start);
   const endD = new Date(end);
   while (cur.getTime() <= endD.getTime()) {
@@ -41,7 +41,7 @@ function getDaysArray(start: string, end: string) {
   return days;
 }
 
-function diffDays(start: string, end: string) {
+function diffDays(start, end) {
   const s = new Date(start).getTime(), e = new Date(end).getTime();
   return Math.round((e - s) / 86400000) + 1;
 }
