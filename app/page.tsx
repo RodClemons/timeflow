@@ -30,10 +30,10 @@ const STATUS_STYLES = {
 };
 
 function getDaysArray(start: string, end: string) {
-  const days = [];
+  const days: string[] = [];
   const cur = new Date(start);
   const endD = new Date(end);
-  while (cur <= endD) {
+  while (cur.getTime() <= endD.getTime()) {
     days.push(new Date(cur).toISOString().split("T")[0]);
     cur.setDate(cur.getDate() + 1);
   }
@@ -41,7 +41,7 @@ function getDaysArray(start: string, end: string) {
 }
 
 function diffDays(start: string, end: string) {
-  const s = new Date(start), e = new Date(end);
+  const s = new Date(start).getTime(), e = new Date(end).getTime();
   return Math.round((e - s) / 86400000) + 1;
 }
 
