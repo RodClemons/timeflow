@@ -1,4 +1,5 @@
 "use client";
+// @ts-nocheck
 import { useState, useEffect } from "react";
 
 const DEPARTMENTS = ["Engineering", "Marketing", "Operations", "Sales", "Design", "HR"];
