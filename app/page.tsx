@@ -29,7 +29,7 @@ const STATUS_STYLES = {
   denied:   { color: "#fca5a5", bg: "rgba(252,165,165,0.1)", label: "Denied" },
 };
 
-function getDaysArray(start, end) {
+function getDaysArray(start: string, end: string) {
   const days = [];
   const cur = new Date(start);
   const endD = new Date(end);
@@ -40,7 +40,7 @@ function getDaysArray(start, end) {
   return days;
 }
 
-function diffDays(start, end) {
+function diffDays(start: string, end: string) {
   const s = new Date(start), e = new Date(end);
   return Math.round((e - s) / 86400000) + 1;
 }
